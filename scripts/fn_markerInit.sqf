@@ -22,6 +22,23 @@ sleep 1;
 	{BMM_DeviceArray = parseSimpleArray _this;}
 ] call cba_settings_fnc_init;
 
+[
+	"BMM_Rangefinders", "EDITBOX", 
+	["GPS Device List", "Enter list of devices to be considered a Rangefinder. Example: [""ItemGPS"",""B_UavTerminal""]"], 
+	["Binded Map Marking"], 
+	"[""rangefinders""]",
+	0, 
+	{BMM_DeviceArray = parseSimpleArray _this;}
+] call cba_settings_fnc_init;
+
+[
+	"BMM_PlaceCrosshairEnabled", "LIST", 
+	["Enabled", "Select whether each feature should be enabled or not."], 
+	["Binded Map Marking", "Crosshair Marker"], 
+	[[0,1,2], ["Disabled", "Enabled", "Enabled - Requires Rangefinders"], 0],, 
+] call cba_settings_fnc_init;
+
+
 _colours = ["BMM_SQUAD_COLOUR_AUTO"];
 _colourNames = ["Squad Colour [Automatic]"];
 _cfgNames = ["BMM_SQUAD_COLOUR_AUTO"];
